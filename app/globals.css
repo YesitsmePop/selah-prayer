@@ -1,0 +1,472 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Updated to clean, modern dark theme with gradients */
+:root {
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.15 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.15 0 0);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.4 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.15 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.15 0 0);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.4 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-serif: var(--font-crimson-text);
+  --font-kalam: var(--font-kalam);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-jetbrains-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Removed sketch borders, added modern gradient styling */
+.modern-card {
+  background: linear-gradient(135deg, oklch(0.08 0.01 240) 0%, oklch(0.12 0.02 280) 50%, oklch(0.09 0.01 200) 100%);
+  border: 1px solid oklch(0.2 0.02 260);
+  box-shadow: 0 8px 32px oklch(0.02 0 0 / 0.4), inset 0 1px 0 oklch(0.15 0.02 240), 0 0 0 1px oklch(0.1 0.01 220 / 0.1);
+  backdrop-filter: blur(10px);
+  min-height: 56px;
+}
+
+/* Focus glow for prayer input area */
+/* remove container-level glow so glow is applied directly to the input */
+.modern-card:focus-within {
+  box-shadow: none;
+}
+
+/* Target the large textarea specifically to give a thin inner glow when focused */
+.modern-card textarea:focus {
+  outline: none;
+}
+
+/* Stronger outer white glow directly on the prayer input */
+.prayer-input:focus {
+  outline: none;
+}
+
+/* single-row textarea centering */
+.prayer-input {
+  padding: 2px 12px 4px 12px;
+  line-height: 1.02;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Placeholder should match the visible text size and family */
+.prayer-input::placeholder {
+  font: inherit; /* inherit font-size and weight */
+  line-height: inherit;
+  font-family: inherit;
+  opacity: 0.6;
+  display: inline-block;
+}
+
+/* Strong white glow around the visible prayer box when focused */
+.prayer-box:focus-within {
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.28), 0 30px 100px rgba(255,255,255,0.12), 0 0 40px rgba(255,255,255,0.08) inset;
+  transition: box-shadow 140ms ease-out;
+  border-radius: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modern-card:focus-within, .modern-card textarea:focus {
+    transition: none !important;
+  }
+}
+
+/* Updated gradient to blue bottom-left, purple top-right with parallax effect */
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    oklch(0.05 0 0) 0%,
+    oklch(0.08 0.05 240) 25%,
+    oklch(0.06 0.03 200) 50%,
+    oklch(0.09 0.06 280) 75%,
+    oklch(0.05 0 0) 100%
+  );
+  background-attachment: fixed;
+}
+
+/* Vapor effect animation (single, modern definition) */
+@keyframes vapor {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+  70% {
+    opacity: 0.3;
+    transform: translateY(-12px) scale(1.03);
+    filter: blur(1.5px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-25px) scale(1.08);
+    filter: blur(3px);
+  }
+}
+
+/* Alias/variant for the vapor animation used in the JSX inline style (vaporFade) */
+@keyframes vaporFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateY(-8px) scale(1.02);
+    filter: blur(0.8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scale(1.06);
+    filter: blur(2.5px);
+  }
+}
+
+/* Default animation for vapor characters if the inline style is absent */
+.vapor-char-display {
+  animation: vaporFade 0.95s ease-out forwards;
+}
+
+.vapor-char-display {
+  display: inline-block;
+  opacity: 1;
+}
+
+/* Updated success animation for modern feel */
+@keyframes successPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-animation {
+  animation: successPulse 0.8s ease-out;
+  background: radial-gradient(circle at center, oklch(0.08 0.02 240 / 0.95) 0%, oklch(0.05 0.01 280 / 0.95) 100%),
+    linear-gradient(135deg, oklch(0.05 0 0 / 0.9) 0%, oklch(0.08 0.01 220 / 0.9) 100%);
+  backdrop-filter: blur(20px);
+}
+
+/* Removed paper texture and sketch styling */
+.scripture-text {
+  font-family: var(--font-serif), serif;
+  opacity: 0.7;
+}
+
+/* Adding modern firework animations */
+@keyframes fireworkExplode {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fireworkTrail {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes fireworkSpark {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--spark-x), var(--spark-y)) scale(0);
+    opacity: 0;
+  }
+}
+
+.firework {
+  position: absolute;
+  pointer-events: none;
+}
+
+.firework-explosion {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: fireworkExplode 1.5s ease-out forwards;
+}
+
+.firework-spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: fireworkSpark 1.2s ease-out forwards;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Glimmer subtle side flashes */
+.glimmer-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+}
+
+.glimmer {
+  position: absolute;
+  top: 20%;
+  width: 220px;
+  height: 220px;
+  transform: translateY(-10%) rotate(-12deg);
+  background: radial-gradient(closest-side, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.65) 14%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0) 70%);
+  filter: blur(16px) saturate(120%);
+  opacity: 0;
+  mix-blend-mode: screen;
+  will-change: opacity, transform, filter;
+}
+
+/* unified glimmer animation for anywhere-on-screen placement */
+.glimmer {
+  animation: glimmerMove 2.6s ease-in-out forwards;
+  transform-origin: center center;
+}
+
+@keyframes glimmerMove {
+  0% { opacity: 0; transform: translateY(0) scale(0.88) rotate(var(--glimmer-rot, -12deg)); filter: blur(20px) saturate(80%); }
+  10% { opacity: 0.38; transform: translateY(-6px) scale(1.04) rotate(calc(var(--glimmer-rot, -12deg) / 2)); filter: blur(12px) saturate(120%); }
+  45% { opacity: 0.18; transform: translateY(-16px) scale(1.06) rotate(0deg); filter: blur(10px) saturate(140%); }
+  70% { opacity: 0.06; transform: translateY(-26px) scale(1.12) rotate(calc(var(--glimmer-rot, -12deg) * -0.5)); filter: blur(16px) saturate(120%); }
+  100% { opacity: 0; transform: translateY(-36px) scale(1.18) rotate(calc(var(--glimmer-rot, -12deg) * -1)); filter: blur(20px) saturate(90%); }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .glimmer {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Site icon fixed in the top-left of the viewport */
+.site-icon {
+  position: fixed;
+}
+
+.site-icon img {
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+  position: relative;
+  z-index: 2; /* keep image above any decorative elements */
+}
+.site-icon:hover img {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+.site-icon:active img {
+  transform: translateY(0) scale(0.99);
+}
+
+@media (max-width: 640px) {
+  .site-icon {
+    top: 8px !important;
+    left: 8px !important;
+  }
+  .site-icon img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Glowing ring that slowly circles the icon on hover */
+/* Keep site-icon as a simple clickable fixed element (no rotating ring) */
+.site-icon {
+  display: inline-block;
+  border-radius: 0.5rem;
+  overflow: visible;
+}
+
+/* Small WPM counter shown under the input on the right */
+.wpm-counter {
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
+  padding: 6px 10px;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-family: var(--font-mono);
+  color: var(--muted-foreground);
+  z-index: 30;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wpm-counter {
+    transition: none !important;
+  }
+}
+
+/* Mobile UX tweaks */
+.site-icon {
+  padding: 6px; /* larger touch area */
+}
+
+.modern-card {
+  transition: padding 160ms ease;
+}
+
+@media (max-width: 420px) {
+  .modern-card {
+    padding: 12px !important;
+  }
+  .wpm-counter {
+    display: none; /* hide WPM counter on very small screens to avoid overlap */
+  }
+}
+
+/* Force smaller fonts and tighter spacing for the input area on mobile */
+@media (max-width: 640px) {
+  .prayer-input {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.15 !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  .prayer-input::placeholder {
+    font-size: 0.8rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .vapor-char-display {
+    font-size: 1.125rem !important;
+    line-height: 1.15 !important;
+    opacity: 0.95;
+  }
+
+  .vapor-caret {
+    height: 0.9rem !important;
+  }
+}
